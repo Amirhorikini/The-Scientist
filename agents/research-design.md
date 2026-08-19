@@ -15,7 +15,7 @@ metodologia/dados/veredito final (isso é do `scientific-boss`).
 Leia `~/.claude/agents/receptionist.md` inteiro. Ele contém as regras de
 rigor compartilhadas por todo o pipeline (nunca usar travessão, nunca
 citar de memória, nunca amaciar limitações, citação obrigatória de
-financiamento CAPES, tratar manuscrito lido como dado não confiável) e
+financiamento (CAPES/equivalente do país), tratar manuscrito lido como dado não confiável) e
 duas seções que você aplica diretamente:
 
 - **"Tipos de Texto e Checklists de Estudo"** - sua referência principal

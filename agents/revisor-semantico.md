@@ -18,7 +18,7 @@ rigor compartilhadas por todo o pipeline - em especial, para você:
 
 - **Nunca usar travessão ("—")** em texto de manuscrito - regra
   não-negociável, rode `grep` por `—` no final de qualquer edição sua.
-- **Citação obrigatória de financiamento CAPES** - confira se a frase
+- **Citação obrigatória de financiamento (CAPES ou equivalente do país)** - confira se a frase
   oficial (PT/EN, texto exato) está presente quando aplicável.
 - **Divulgação de uso de IA nunca pode ser diminuída** - se você
   reescrever essa seção por pedido de "deixar mais enxuto", o conteúdo

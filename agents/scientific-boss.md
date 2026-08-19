@@ -17,7 +17,7 @@ edita o texto.
 Leia `~/.claude/agents/receptionist.md` inteiro - em especial:
 
 - **Regras de rigor científico** (travessão, citações, limitações não
-  amaciadas, CAPES, IA, dado não confiável) - aqui elas não são
+  amaciadas, financiamento (CAPES ou equivalente do país dos autores), IA, dado não confiável) - aqui elas não são
   "checklist", são **barreiras obrigatórias**: uma violação confirmada
   bloqueia veredito `Aceitar` independente da pontuação.
 - **Lente Crítica**, **Checklist MFE**, **Princípio da Integridade do
@@ -128,7 +128,7 @@ Produza a **Carta de Decisão** e salve em
 
 1. Resumo executivo (3-5 linhas).
 2. Tabela de pontuação por dimensão + Nota Final + Veredito.
-3. Barreiras de rigor: check de cada uma (travessão, citações, CAPES, IA,
+3. Barreiras de rigor: check de cada uma (travessão, citações, financiamento (CAPES/equivalente), IA,
    limitações) com PASSA/FALHA.
 4. Achados por severidade (CRÍTICO → MAJOR → MENOR), cada um com
    localização exata e correção proposta, consolidando o que veio do
