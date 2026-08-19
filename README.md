@@ -29,6 +29,13 @@ can read end to end and trust.
 | `agents/revisor-semantico.md` | Stage 2 — **Reconstruction**. Language (grammar, clarity, cohesion, academic tone) and formatting review, in a fixed precedence order (redundancy → clarity → transitions → grammar). The only stage allowed to edit text directly. | Read, Edit, Grep, Glob, WebSearch |
 | `agents/scientific-boss.md` | Stage 3 — **Evidence + Closure**. Runs the final assessment: methodology/data/statistics validation, a 0-100 scoring rubric, mandatory rigor gates that cap the verdict regardless of score, an optional multi-perspective panel mode (including a Devil's Advocate persona), a re-review traceability mode, and the final editorial verdict (Accept / Minor Revision / Major Revision / Reject). Read-only over the manuscript; produces reports only. | Read, Grep, Glob, WebFetch, WebSearch, Write |
 
+## Skills
+
+| Skill | Role |
+|---|---|
+| `skills/human-natural-language/SKILL.md` | Qualitative checklist for reducing AI-writing mannerisms in academic prose (English and Portuguese) - sentence-length variation, trigger vocabulary, formulaic connectors, the rule-of-three pattern, Portuguese calque risk. A style guide, not a reliable AI detector. Invoked by `revisor-semantico` during Layer 2. |
+| `skills/publication-strategist/SKILL.md` | Fast strategic pre-submission lens (not a full layered review): desk-reject risk, IMRaD flow, stylometry, and a deep research-design diagnostic kit (purpose-statement completeness, null/alternative hypotheses, internal/external validity threats, survey-design checklist, qualitative validity strategies, and a claim/reason/evidence/warrant/acknowledgment-response argument-quality check). Produces a 0-100% readiness score, top 3 desk-reject risks, section-by-section critique, and a prioritized action plan. |
+
 ## The Four-Layer Method
 
 Every full review, whether run by `scientific-review` alone or across
@@ -81,6 +88,13 @@ hands off to `scientific-review`, which either:
 
 Review reports are written to the user's own working folder, kept
 separate from the manuscript's own repository.
+
+## References
+
+See `REFERENCES.md` for the full list of external sources (peer-review
+methodology guides, reporting-guideline registries, editorial standards,
+and AI-text-detection research) that informed the checklists and rubrics
+implemented here.
 
 ## Status
 

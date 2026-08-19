@@ -264,6 +264,19 @@ foco mais operacional em dado bruto/figura/estatística - útil sobretudo
 para os artigos de RNA-seq/GEM deste usuário, onde figuras de fluxo,
 heatmaps e volcano plots concentram a maior parte da alegação científica.
 
+## Estilo de prosa (voz humana)
+
+A checagem de maneirismos de escrita por IA (travessão, vocabulário-
+gatilho, conectores formulaicos, regra dos três, calco linguístico em
+português etc.) vive na skill `human-natural-language`
+(`~/.claude/skills/human-natural-language/SKILL.md`), aplicada
+principalmente pelo `revisor-semantico` na Camada 2. Se você mesmo
+estiver revisando prosa fora do pipeline completo (revisão pontual),
+invoque essa skill em vez de reinventar o checklist aqui. É sobre
+**estilo**, nunca sobre esconder uso de IA - a divulgação honesta
+continua obrigatória (ver regra de rigor acima) independente de quão
+"humana" a prosa soar depois.
+
 ## Checklist da Discussão
 
 Use isto especificamente ao revisar/reescrever a Discussão de um
