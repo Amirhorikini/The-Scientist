@@ -1,117 +1,116 @@
 ---
 name: revision-response-composer
-description: Compõe a carta de resposta a revisores/editor (formato Comentário do Revisor → Resposta do Autor → Mudança Feita, R→A→C) depois de uma rodada de revisão por pares real ou simulada pelo scientific-boss. Inclui tabela de mudanças página-a-página, forma correta de discordar de um revisor com evidência, e regra de que nenhum comentário pode ficar sem resposta. Use quando o usuário tiver recebido pareceres (reais ou do Modo Banca/Re-revisão do scientific-boss) e precisar escrever a carta de resubmissão.
+description: Composes the formal response letter to reviewers/editor (Reviewer Comment → Author Response → Change Made format, R→A→C) after a real or scientific-boss-simulated peer-review round. Includes a page-by-page change table, the correct way to disagree with a reviewer using evidence, and the rule that no comment can go unanswered. Use when the user has received reports (real or from scientific-boss's Panel/Re-review Mode) and needs to write the resubmission letter.
 ---
 
 # Revision Response Composer
 
-Monta a carta de resposta formal a revisores/editor depois de uma
-rodada de revisão, no formato **R→A→C** (Reviewer comment → Author
-response → Changes made) que periódicos esperam.
+Puts together the formal response letter to reviewers/editor after a
+review round, in the **R→A→C** (Reviewer comment → Author response →
+Changes made) format journals expect.
 
-## Regras inegociáveis
+## Non-negotiable rules
 
-- **Todo comentário recebe resposta - nenhum pode ser pulado**, mesmo os
-  menores. Uma lista de fraquezas do parecer é ilimitada; se o
-  `scientific-boss` (ou um revisor real) levantou 12 itens, a carta tem
-  12 respostas, não um resumo dos "principais".
-- **Discordar exige evidência, nunca só "discordamos"**. Ver seção
-  "Como discordar corretamente" abaixo.
-- **Reconhecimento de pontos fortes só quando o parecer de fato elogiou
-  algo** - não fabrique elogio para preencher a seção; se o parecer não
-  teve nenhum ponto positivo explícito, pule esse bloco em vez de
-  inventar um.
-- **Toda mudança precisa de localização exata** (página/parágrafo na
-  versão revisada) - "mudamos isso" sem dizer onde é uma resposta fraca
-  que obriga o revisor a caçar a alteração.
-- Isso é sobre **compor a carta**, não sobre decidir o que mudar - as
-  mudanças em si vêm do `revisor-semantico`/`scientific-boss`/decisão do
-  usuário; esta skill só formata a resposta de forma completa e
-  rastreável.
+- **Every comment gets a response - none can be skipped**, even minor
+  ones. A report's weakness list is unbounded; if `scientific-boss` (or
+  a real reviewer) raised 12 items, the letter has 12 responses, not a
+  summary of the "main ones".
+- **Disagreeing requires evidence, never just "we disagree"**. See "How
+  to disagree correctly" below.
+- **Acknowledge strengths only when the report actually praised
+  something** - don't fabricate praise to fill the section; if the
+  report had no explicit positive point, skip that block instead of
+  inventing one.
+- **Every change needs an exact location** (page/paragraph in the
+  revised version) - "we changed that" without saying where is a weak
+  response that forces the reviewer to hunt for the edit.
+- This is about **composing the letter**, not about deciding what to
+  change - the changes themselves come from
+  `semantic-reviewer`/`scientific-boss`/the user's decision; this skill
+  only formats the response completely and traceably.
 
-## Estrutura da carta
+## Letter structure
 
 ```
-# Resposta aos Comentários dos Revisores
+# Response to Reviewer Comments
 
-## Informações do Manuscrito
-- Título / ID do manuscrito / Data de submissão original / Data desta
-  revisão / Rodada de revisão
+## Manuscript Information
+- Title / Manuscript ID / Original submission date / This revision's
+  date / Revision round
 
-## Resumo das Mudanças
-[300-500 palavras resumindo as mudanças principais desta rodada]
-- Mudanças estruturais (reorganização de seção, contagem de
-  palavras antes → depois)
-- Conteúdo novo (análises/dados/referências adicionados)
+## Summary of Changes
+[300-500 words summarizing this round's main changes]
+- Structural changes (section reorganization, word count before →
+  after)
+- New content (analyses/data/references added)
 
-## Resposta ao Revisor/Adequação ao Periódico
-### Comentário 1
-> [citação direta do comentário]
-**Resposta do Autor**: [...]
-**Mudança Feita**: [página X, parágrafo Y - o quê exatamente mudou]
+## Response to Reviewer/Journal Fit
+### Comment 1
+> [direct quote of the comment]
+**Author Response**: [...]
+**Change Made**: [page X, paragraph Y - exactly what changed]
 
-## Resposta ao Revisor 1 (Metodologia)
-### Pontos Fortes Reconhecidos (só se o parecer citou algo positivo)
-### R1-F1, R1-F2... [uma entrada por fraqueza levantada, sem limite de quantidade]
-### Perguntas do R1
-### Itens Menores do R1 (tabela: # | comentário | ação tomada | localização)
+## Response to Reviewer 1 (Methodology)
+### Strengths Acknowledged (only if the report cited something positive)
+### R1-W1, R1-W2... [one entry per weakness raised, no quantity limit]
+### R1 Questions
+### R1 Minor Items (table: # | comment | action taken | location)
 
-## Resposta ao Revisor 2 (Domínio) / Revisor 3 (Perspectiva) / Advogado do Diabo
-[mesmo formato acima para cada persona que gerou achados]
+## Response to Reviewer 2 (Domain) / Reviewer 3 (Perspective) / Devil's Advocate
+[same format above for each persona that produced findings]
 
-## Resposta às Revisões Obrigatórias (do veredito do scientific-boss)
-[tabela: # | revisão exigida | status (Completo/Parcialmente Endereçado) | resumo | localização]
+## Response to Required Revisions (from scientific-boss's verdict)
+[table: # | required revision | status (Complete/Partially Addressed) | summary | location]
 
-## Log de Mudanças Página-a-Página
-[tabela: página original | página revisada | seção | descrição da mudança]
+## Page-by-Page Change Log
+[table: original page | revised page | section | change description]
 
-## Encerramento
-[agradecimento, afirmação de que a versão revisada endereça as
-preocupações levantadas, ou explicação honesta do que não foi
-totalmente resolvido e por quê]
+## Closing
+[thanks, a statement that the revised version addresses the concerns
+raised, or an honest explanation of what wasn't fully resolved and why]
 ```
 
-## Como discordar corretamente
+## How to disagree correctly
 
-Discordar de um revisor é legítimo e esperado às vezes - mas precisa de
-estrutura, não só negação:
+Disagreeing with a reviewer is sometimes legitimate and expected - but
+it needs structure, not just denial:
 
-**Certo**:
-> Revisor: sugere usar o Método X em vez do Método Y.
+**Right**:
+> Reviewer: suggests using Method X instead of Method Y.
 >
-> **Resposta do Autor**: Agradecemos a sugestão. Optamos pelo Método Y
-> pelos seguintes motivos: (1) performa melhor para [tipo específico de
-> dado] (citação verificada); (2) os pressupostos do Método X (ex.
-> [pressuposto]) não são satisfeitos no nosso desenho. Entretanto,
-> adicionamos uma checagem de robustez com o Método X no Apêndice B, com
-> resultados consistentes.
+> **Author Response**: We thank the reviewer for the suggestion. We
+> chose Method Y for the following reasons: (1) it performs better for
+> [specific data type] (verified citation); (2) Method X's assumptions
+> (e.g. [assumption]) aren't satisfied in our design. However, we've
+> added a robustness check using Method X in Appendix B, with
+> consistent results.
 >
-> **Mudança Feita**: Apêndice B (p. 25-26) com a checagem de robustez;
-> justificativa da escolha do Método Y na seção de Metodologia (p. 9,
+> **Change Made**: Appendix B (p. 25-26) with the robustness check;
+> justification for choosing Method Y in the Methods section (p. 9,
 > §3).
 
-**Errado**:
-> **Resposta do Autor**: Discordamos. O Método Y é apropriado.
+**Wrong**:
+> **Author Response**: We disagree. Method Y is appropriate.
 
-A diferença: a resposta certa dá razão específica, cita evidência
-(verificada, nunca de memória - regra de rigor do projeto), e ainda
-assim oferece algo ao revisor (a checagem de robustez) em vez de só
-negar.
+The difference: the right response gives a specific reason, cites
+evidence (verified, never from memory - the project's rigor rule), and
+still offers the reviewer something (the robustness check) instead of
+just refusing.
 
-## Características de resposta fraca (evitar)
+## Weak-response traits (avoid)
 
-- **Perfunctória**: "Corrigido" sem dizer o quê.
-- **Evasiva**: não responde a pergunta difícil de fato.
-- **Defensiva sem explicação**: "o revisor entendeu errado" sem dizer
-  por quê.
-- **Promete demais**: reconhece todos os problemas mas não oferece
-  solução para nenhum.
-- **Sem marcador de local**: mudança feita mas sem dizer onde, obrigando
-  o revisor a procurar.
+- **Perfunctory**: "Fixed" without saying what.
+- **Evasive**: doesn't actually answer a hard question.
+- **Defensive without explanation**: "the reviewer misunderstood" without
+  saying why.
+- **Overpromising**: acknowledges every problem but offers no solution
+  for any of them.
+- **No location marker**: change made but not saying where, forcing the
+  reviewer to search for it.
 
-## Relação com o resto do pipeline
+## Relation to the rest of the pipeline
 
-Use depois que o `scientific-boss` já produziu um veredito (primeira
-rodada ou Modo Re-revisão) - a carta consolida a resposta a esse
-veredito. Se o manuscrito ainda não foi revisado nenhuma vez, não há o
-que responder ainda; rode o pipeline completo primeiro.
+Use this after `scientific-boss` has already produced a verdict (first
+round or Re-review Mode) - the letter consolidates the response to that
+verdict. If the manuscript hasn't been reviewed yet at all, there's
+nothing to respond to yet; run the full pipeline first.
