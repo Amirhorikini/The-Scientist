@@ -1,168 +1,170 @@
 ---
 name: statistical-reporting-standards
-description: Checklist detalhado de relato estatístico (padrão APA 7ª edição) - checklist universal (descritivas, effect size, IC, poder estatístico, dados faltantes, testagem de pressupostos), checklists por método (t-test, ANOVA, regressão, SEM, HLM, qui-quadrado, não-paramétricos), formatação APA de números/símbolos, red flags de p-hacking/HARKing/GRIM/GRIMMER, e rubrica de pontuação de completude estatística. Use na Camada 3 (Evidência) ao avaliar a seção de Métodos/Resultados de um manuscrito quantitativo - aprofunda o Checklist MFE do scientific-review.
+description: Detailed statistical reporting checklist (APA 7th edition standard) - universal checklist (descriptives, effect size, CI, statistical power, missing data, assumption testing), per-method checklists (t-test, ANOVA, regression, SEM, HLM, chi-square, non-parametric), APA number/symbol formatting, p-hacking/HARKing/GRIM/GRIMMER red flags, and a statistical-completeness scoring rubric. Use in Layer 3 (Evidence) when assessing a quantitative manuscript's Methods/Results section - deepens scientific-review's MFE Checklist.
 ---
 
 # Statistical Reporting Standards
 
-Checklist operacional para avaliar se o relato estatístico de um
-manuscrito quantitativo está completo e correto, no padrão APA 7ª
-edição. Aprofunda o Checklist MFE do `scientific-review` - use esta
-skill quando precisar de rigor estatístico linha por linha, não só a
-checagem geral de "a estatística parece adequada?".
+An operational checklist for assessing whether a quantitative
+manuscript's statistical reporting is complete and correct, per the
+APA 7th edition standard. Deepens `scientific-review`'s MFE Checklist -
+use this skill when you need line-by-line statistical rigor, not just
+the general "does the statistics look adequate?" check.
 
-## 1. Checklist universal (todo artigo quantitativo)
+## 1. Universal checklist (every quantitative article)
 
-- **Descritivas**: média (*M*) e desvio-padrão (*SD*) sempre juntos
-  (nunca *SD* trocado por erro-padrão *SE* sem dizer); *N* total e por
-  grupo; range ou IQR; frequência (*f*) e porcentagem para categóricas -
-  nunca só a porcentagem.
-- **Effect size (obrigatório pela APA 7ª ed.)**: todo teste estatístico
-  precisa vir acompanhado de effect size, não só *p*-valor. Métrica por
-  método: *t*-test → Cohen's *d* (pequeno/médio/grande: 0.2/0.5/0.8);
-  ANOVA → eta²/eta² parcial (.01/.06/.14); correlação → *r*
-  (.10/.30/.50); regressão → R²/*f*² (*f*²: .02/.15/.35); qui-quadrado →
-  Cramer's *V*/*phi* (.10/.30/.50); odds ratio → OR (1.5/2.5/4.3). O
-  número sozinho não basta - precisa da interpretação de magnitude.
-- **Intervalo de confiança**: todo effect size e estimativa-chave deveria
-  reportar IC 95% no formato `[limite inferior, limite superior]`;
-  interprete o que o IC diz sobre precisão, não só se cruza zero.
-- **Significância estatística**: *p*-valor exato (`p = .032`, não só
-  `p < .05`); `p < .001` só quando muito pequeno, nunca `p = .000`; nível
-  alpha declarado a priori; correção para comparações múltiplas
-  (Bonferroni/Holm/FDR); resultados não-significativos relatados
-  integralmente, nunca escondidos.
-- **Poder estatístico**: análise de poder a priori (meta >= .80, effect
-  size assumido, alpha, N necessário), fonte do effect size assumido,
-  ferramenta usada (G*Power, pacote `pwr` etc.); para resultados
-  não-significativos, discutir risco de erro Tipo II.
-- **Dados faltantes**: quantidade e proporção por variável; mecanismo
-  discutido (MCAR/MAR/MNAR, não presumido); método declarado (listwise/
-  pairwise/imputação múltipla/FIML); idealmente análise de
-  sensibilidade comparando métodos.
-- **Testagem de pressupostos**: normalidade (Shapiro-Wilk/K-S/Q-Q),
-  homogeneidade de variância (Levene), linearidade, independência
-  (Durbin-Watson ou justificativa do desenho), multicolinearidade (VIF),
-  normalidade/homoscedasticidade de resíduos (regressão) - "N > 30
-  então não preciso testar" não é justificativa válida.
+- **Descriptives**: mean (*M*) and standard deviation (*SD*) always
+  together (never *SD* swapped for standard error *SE* without saying
+  so); total and per-group *N*; range or IQR; frequency (*f*) and
+  percentage for categorical variables - never just the percentage.
+- **Effect size (mandatory per APA 7th ed.)**: every statistical test
+  needs to come with an effect size, not just a *p*-value. Metric by
+  method: *t*-test → Cohen's *d* (small/medium/large: 0.2/0.5/0.8);
+  ANOVA → eta²/partial eta² (.01/.06/.14); correlation → *r*
+  (.10/.30/.50); regression → R²/*f*² (*f*²: .02/.15/.35); chi-square →
+  Cramer's *V*/*phi* (.10/.30/.50); odds ratio → OR (1.5/2.5/4.3). The
+  number alone isn't enough - it needs a magnitude interpretation.
+- **Confidence interval**: every effect size and key estimate should
+  report a 95% CI in the format `[lower bound, upper bound]`; interpret
+  what the CI says about precision, not just whether it crosses zero.
+- **Statistical significance**: exact *p*-value (`p = .032`, not just
+  `p < .05`); `p < .001` only when very small, never `p = .000`; alpha
+  level declared a priori; correction for multiple comparisons
+  (Bonferroni/Holm/FDR); non-significant results reported in full,
+  never hidden.
+- **Statistical power**: a priori power analysis (target >= .80,
+  assumed effect size, alpha, required N), source of the assumed effect
+  size, tool used (G*Power, the `pwr` package, etc.); for non-significant
+  results, discuss Type II error risk.
+- **Missing data**: amount and proportion per variable; mechanism
+  discussed (MCAR/MAR/MNAR, not assumed); method stated (listwise/
+  pairwise/multiple imputation/FIML); ideally a sensitivity analysis
+  comparing methods.
+- **Assumption testing**: normality (Shapiro-Wilk/K-S/Q-Q), homogeneity
+  of variance (Levene), linearity, independence (Durbin-Watson or a
+  design-based justification), multicollinearity (VIF),
+  residual normality/homoscedasticity (regression) - "N > 30 so I don't
+  need to test" is not a valid justification.
 
-## 2. Checklists por método (aplique o que for relevante ao desenho)
+## 2. Per-method checklists (apply whichever fits the design)
 
-- **t-test**: estatística `t(df) = X.XX, p = .XXX`; independente vs.
-  pareado correto; Cohen's *d* (ou *d_z* pareado); pressupostos
-  testados; correção de Welch se variâncias desiguais; direcionalidade
-  (uni/bicaudal) justificada a priori.
-- **ANOVA**: `F(df1,df2) = X.XX, p = .XXX`; eta²/eta² parcial/omega²;
-  post-hoc quando efeito principal é significativo (Tukey/Bonferroni/
-  Games-Howell); interações interpretadas em desenho fatorial;
-  esfericidade (Mauchly + correção Greenhouse-Geisser/Huynh-Feldt) em
-  medidas repetidas.
-- **Regressão linear**: R²/R² ajustado/teste F do modelo; tabela de
-  coeficientes completa (*B*, *SE*, *beta*, *t*, *p*, IC 95%); VIF;
-  diagnóstico de resíduos (normalidade, homoscedasticidade, outliers via
-  Cook's D); método de seleção de variáveis justificado.
-- **Regressão logística**: ajuste do modelo (Hosmer-Lemeshow/-2LL/
-  Nagelkerke R²); coeficientes (*B*, *SE*, Wald, OR, IC 95% do OR);
-  acurácia de classificação/sensibilidade/especificidade/AUC; regra
-  EPV (10-20 eventos por preditor).
-- **SEM**: N >= 200 (ou 5-10x parâmetros estimados); **pelo menos 4**
-  índices de ajuste simultâneos (CFI/TLI >= .95 bom, >= .90 aceitável;
-  RMSEA <= .06 bom com IC 90%; SRMR <= .08; qui²/df <= 3); cargas
-  fatoriais padronizadas >= .50; CFA antes de SEM (abordagem em duas
-  etapas); confiabilidade/validade (CR >= .70, AVE >= .50).
-- **Qui-quadrado**: `chi²(df, N=XX) = X.XX, p = .XXX`; Cramer's V (>2x2)
-  ou phi (2x2); frequência esperada >= 5 em toda célula (senão, teste
-  exato de Fisher); resíduos padronizados quando significativo.
-- **Não-paramétricos**: justificativa explícita de por que não usar o
-  teste paramétrico; teste correto (Mann-Whitney/Wilcoxon/Kruskal-
-  Wallis/Friedman); effect size (*r* = Z/√N para Mann-Whitney).
+- **t-test**: statistic `t(df) = X.XX, p = .XXX`; independent vs.
+  paired chosen correctly; Cohen's *d* (or paired *d_z*); assumptions
+  tested; Welch correction if variances are unequal; directionality
+  (one/two-tailed) justified a priori.
+- **ANOVA**: `F(df1,df2) = X.XX, p = .XXX`; eta²/partial eta²/omega²;
+  post hoc when the main effect is significant (Tukey/Bonferroni/
+  Games-Howell); interactions interpreted in factorial designs;
+  sphericity (Mauchly + Greenhouse-Geisser/Huynh-Feldt correction) for
+  repeated measures.
+- **Linear regression**: R²/adjusted R²/model F test; full coefficient
+  table (*B*, *SE*, *beta*, *t*, *p*, 95% CI); VIF; residual diagnostics
+  (normality, homoscedasticity, outliers via Cook's D); variable-selection
+  method justified.
+- **Logistic regression**: model fit (Hosmer-Lemeshow/-2LL/Nagelkerke
+  R²); coefficients (*B*, *SE*, Wald, OR, 95% CI of the OR);
+  classification accuracy/sensitivity/specificity/AUC; the EPV rule
+  (10-20 events per predictor).
+- **SEM**: N >= 200 (or 5-10x the estimated parameters); **at least 4**
+  simultaneous fit indices (CFI/TLI >= .95 good, >= .90 acceptable;
+  RMSEA <= .06 good with 90% CI; SRMR <= .08; chi²/df <= 3); standardized
+  factor loadings >= .50; CFA before SEM (two-step approach);
+  reliability/validity (CR >= .70, AVE >= .50).
+- **Chi-square**: `chi²(df, N=XX) = X.XX, p = .XXX`; Cramer's V (>2x2)
+  or phi (2x2); expected frequency >= 5 in every cell (otherwise, Fisher's
+  exact test); standardized residuals when significant.
+- **Non-parametric**: explicit justification for not using the
+  parametric test; correct test (Mann-Whitney/Wilcoxon/Kruskal-
+  Wallis/Friedman); effect size (*r* = Z/√N for Mann-Whitney).
 
-## 3. Formatação APA 7ª edição (números e símbolos)
+## 3. APA 7th edition formatting (numbers and symbols)
 
-- Sem zero à esquerda em estatísticas que não passam de 1.0 (`r = .45`,
-  não `r = 0.45`) - vale para *r*, *R*, proporções/p-valor, Cramer's V,
-  phi, eta², R², beta padronizado.
-- Com zero à esquerda em estatísticas que podem passar de 1.0 (`M =
-  0.75`) - vale para M, SD, B, Cohen's d, t, F, chi².
-- Duas casas decimais geralmente; p-valor com 2-3 casas (`p = .032`,
-  nunca `p = .0321`); porcentagem com 0-1 casa decimal.
-- Itálico: *M*, *SD*, *SE*, *N*/*n*, *t*, *F*, *p*, *r*, *R*, *z*, *d*,
-  *B*, *beta*, *chi²*. Sem itálico: df, SS, MS, OR, CI, VIF, AIC, BIC,
+- No leading zero for statistics that can't exceed 1.0 (`r = .45`, not
+  `r = 0.45`) - applies to *r*, *R*, proportions/p-value, Cramer's V,
+  phi, eta², R², standardized beta.
+- Leading zero for statistics that can exceed 1.0 (`M = 0.75`) -
+  applies to M, SD, B, Cohen's d, t, F, chi².
+- Generally two decimal places; p-value with 2-3 places (`p = .032`,
+  never `p = .0321`); percentages with 0-1 decimal place.
+- Italic: *M*, *SD*, *SE*, *N*/*n*, *t*, *F*, *p*, *r*, *R*, *z*, *d*,
+  *B*, *beta*, *chi²*. Not italic: df, SS, MS, OR, CI, VIF, AIC, BIC,
   CFI, TLI, RMSEA, SRMR, ICC.
-- Tabela de três linhas (acima do cabeçalho, abaixo do cabeçalho, fim da
-  tabela) - sem linhas verticais; números alinhados à direita,
-  decimais alinhados.
+- Three-line table (above the header, below the header, bottom of the
+  table) - no vertical lines; numbers right-aligned, decimals aligned.
 
-## 4. Red flags estatísticos (sinais de alerta, não veredito automático)
+## 4. Statistical red flags (warning signs, not an automatic verdict)
 
-Estes são gatilhos para investigar mais, não uma condenação automática -
-mas quando confirmados, viram achado real no relatório.
+These are triggers to investigate further, not an automatic
+condemnation - but once confirmed, they become a real finding in the
+report.
 
-- **P-hacking**: muitos *p* concentrados em .04-.05; relato seletivo
-  (só resultados significativos aparecem); estratégia de análise não
-  declarada a priori; subgrupos post-hoc "descobertos"; tamanho de
-  amostra flexível sem regra de parada; exclusão de outliers em massa
-  sem critério claro.
-- **HARKing** (hipotetizar depois de ver o resultado): hipóteses 100%
-  confirmadas sem exceção; revisão de literatura claramente construída
-  post-hoc; mudança de direção da hipótese sem reconhecer.
-- **Effect size/IC ausentes**: conclusão baseada só em p-valor; IC
-  ausente ou extremamente largo; effect size relatado inconsistente com
-  o que os dados brutos permitiriam calcular.
-- **Amostra**: sem análise de poder; N < 10x preditores em regressão;
-  atrito de amostra grande e não explicado.
-- **Comparações múltiplas sem correção**: múltiplos t-tests em vez de
-  ANOVA para 3+ grupos; múltiplas variáveis dependentes testadas
-  separadamente sem Bonferroni/FDR; testar vários modelos e reportar só
-  "o melhor".
-- **Pressupostos**: testagem ausente; violação relatada mas análise
-  original mantida mesmo assim; VIF alto (>10) sem ação.
-- **Sinais de inconsistência numérica** (nível mais sério, pode indicar
-  erro ou fabricação, não só relato incompleto):
-  - **GRIM**: para dados de escala discreta, a média relatada precisa
-    ser algebricamente alcançável dado o N e a precisão declarados - se
-    não for, é um sinal real de inconsistência (Brown & Heathers, 2017).
-  - **GRIMMER**: extensão do GRIM para desvio-padrão - mesmo princípio,
-    checando se o SD relatado é alcançável dado a média e N.
-  - `p` incompatível com a estatística/df relatados (não bate com
-    nenhuma leitura de cauda plausível).
-  - df inconsistente com o N relatado no texto.
-  Estes quatro só devem ser levantados quando você (ou o usuário)
-  consegue de fato recalcular e checar - nunca alegue "GRIM
-  inconsistente" por intuição sem fazer a conta.
+- **P-hacking**: many *p*-values clustered at .04-.05; selective
+  reporting (only significant results appear); analysis strategy not
+  declared a priori; "discovered" post hoc subgroups; flexible sample
+  size with no stopping rule; mass outlier exclusion with no clear
+  criterion.
+- **HARKing** (Hypothesizing After the Results are Known): 100% of
+  hypotheses confirmed with no exception; literature review clearly
+  built post hoc; a hypothesis's direction changed without
+  acknowledgment.
+- **Missing effect size/CI**: conclusion based only on a p-value; CI
+  absent or extremely wide; reported effect size inconsistent with what
+  the raw data would allow you to calculate.
+- **Sample**: no power analysis; N < 10x predictors in regression;
+  large, unexplained sample attrition.
+- **Uncorrected multiple comparisons**: multiple t-tests instead of
+  ANOVA for 3+ groups; multiple dependent variables tested separately
+  without Bonferroni/FDR; testing several models and reporting only
+  "the best one".
+- **Assumptions**: testing absent; violation reported but the original
+  analysis kept anyway; high VIF (>10) with no action taken.
+- **Signs of numerical inconsistency** (the most serious level, can
+  indicate error or fabrication, not just incomplete reporting):
+  - **GRIM**: for discrete-scale data, the reported mean needs to be
+    algebraically reachable given the stated N and precision - if it
+    isn't, that's a real inconsistency signal (Brown & Heathers, 2017).
+  - **GRIMMER**: GRIM's extension to standard deviation - same
+    principle, checking whether the reported SD is reachable given the
+    mean and N.
+  - `p` incompatible with the reported statistic/df (doesn't match any
+    plausible tail reading).
+  - df inconsistent with the N reported in the text.
+  These four should only be raised when you (or the user) can actually
+  recompute and check - never claim "GRIM inconsistency" by intuition
+  without doing the math.
 
-## 5. Rubrica de completude do relato estatístico (0-100)
+## 5. Statistical-reporting completeness rubric (0-100)
 
-| Dimensão | Peso | Critério de nota máxima |
+| Dimension | Weight | Full-score criterion |
 |---|---|---|
-| Descritivas completas | 15% | M, SD, N, range presentes |
-| Effect size relatado | 20% | Todo teste acompanhado de effect size |
-| Intervalo de confiança | 15% | Estimativas-chave com IC |
-| Testagem de pressupostos | 15% | Todos os pressupostos relevantes testados |
-| Poder estatístico | 10% | Análise de poder a priori completa |
-| Dados faltantes | 10% | Quantidade + método de tratamento relatados |
-| Formatação APA | 10% | Símbolos, decimais, tabelas conformes |
-| Ausência de red flags | 5% | Nenhum red flag da seção 4 detectado |
+| Complete descriptives | 15% | M, SD, N, range present |
+| Effect size reported | 20% | Every test comes with an effect size |
+| Confidence interval | 15% | Key estimates include a CI |
+| Assumption testing | 15% | Every relevant assumption tested |
+| Statistical power | 10% | Complete a priori power analysis |
+| Missing data | 10% | Amount + handling method reported |
+| APA formatting | 10% | Symbols, decimals, tables compliant |
+| No red flags | 5% | No red flag from Section 4 detected |
 
-Faixas: 90-100 exemplar; 70-89 adequado (omissões menores); 50-69
-precisa melhorar (omissões significativas); 30-49 inadequado; 0-29
-insuficiente para sustentar as conclusões.
+Bands: 90-100 exemplary; 70-89 adequate (minor omissions); 50-69 needs
+improvement (significant omissions); 30-49 inadequate; 0-29 insufficient
+to support the conclusions.
 
-## 6. Ordem de checagem recomendada
+## 6. Recommended checking order
 
-1. A pergunta de pesquisa corresponde ao método de análise escolhido?
-2. Testagem de pressupostos está relatada?
-3. Checklist universal (seção 1), item por item.
-4. Checklist específico do método (seção 2).
-5. Varredura de red flags (seção 4).
-6. Formatação APA (seção 3).
-7. Pontuação de completude (seção 5).
+1. Does the research question match the chosen analysis method?
+2. Is assumption testing reported?
+3. Universal checklist (section 1), item by item.
+4. Method-specific checklist (section 2).
+5. Red-flag scan (section 4).
+6. APA formatting (section 3).
+7. Completeness score (section 5).
 
-## Relação com o resto do pipeline
+## Relation to the rest of the pipeline
 
-Use esta skill no `scientific-boss` (Camada 3 - Evidência), como
-aprofundamento do Checklist MFE já existente - o Checklist MFE cobre
-metodologia/figuras de forma mais ampla, esta skill cobre relato
-estatístico linha por linha. Não substitui as regras de rigor
-(travessão, citações, limitações, financiamento, IA) nem o Princípio da
-Integridade do Dado - complementa especificamente a checagem numérica.
+Use this skill in `scientific-boss` (Layer 3 - Evidence), as a
+deepening of the already-existing MFE Checklist - the MFE Checklist
+covers methodology/figures more broadly, this skill covers statistical
+reporting line by line. It doesn't replace the rigor rules (em dash,
+citations, limitations, funding, AI) or the Data Integrity Principle -
+it specifically complements the numerical check.
