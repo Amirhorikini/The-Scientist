@@ -1,81 +1,82 @@
 ---
 name: manuscript-rewriter
-description: Reescreve de fato um trecho/seção do manuscrito, aplicando de uma vez a arquitetura narrativa (C-C-C, CARS, Posição de Tópico/Ênfase), a redução de maneirismos de escrita por IA, e hedging calibrado - e aplica a mudança no arquivo via Edit, não só sugere. Preserva 100% do conteúdo científico (dados, alegações, limitações, divulgação de IA) - é reescrita de estilo, nunca de substância. Use quando o usuário pedir para "reescrever"/"melhorar o texto"/"deixar mais natural"/"editar de vez" um trecho específico do manuscrito, não uma revisão de mérito científico.
+description: Actually rewrites a passage/section of the manuscript, applying at once the narrative architecture (C-C-C, CARS, Topic/Stress Position), AI-writing-mannerism reduction, and calibrated hedging - and applies the change to the file via Edit, not just a suggestion. Preserves 100% of the scientific content (data, claims, limitations, AI disclosure) - this is style rewriting, never substance. Use when the user asks to "rewrite"/"improve the text"/"make it sound more natural"/"just edit it already" for a specific manuscript passage, not a scientific-merit review.
 ---
 
 # Manuscript Rewriter
 
-Reescreve e **aplica de verdade** a edição num trecho do manuscrito -
-diferente das outras skills de estilo (`narrative-architecture`,
-`human-natural-language`), que descrevem o que ajustar mas deixam a
-aplicação para quem invocou. Esta skill é o passo de execução: pega os
-princípios das outras duas, decide a reescrita concreta, e grava no
-arquivo.
+Actually rewrites and **applies** the edit to a manuscript passage -
+unlike the other style skills (`narrative-architecture`,
+`human-natural-language`), which describe what to adjust but leave the
+application to whoever invoked them. This skill is the execution step:
+it takes the other two's principles, decides the concrete rewrite, and
+writes it to the file.
 
-## Pré-requisito
+## Prerequisite
 
-Só use esta skill se o agente que a invocou tiver a ferramenta `Edit`
-disponível (hoje: `revisor-semantico` e `scientific-review`). Se não
-tiver, produza a versão reescrita como texto na resposta e diga
-explicitamente que não pode aplicar direto no arquivo - nunca finja que
-aplicou uma mudança que só existe na conversa.
+Only use this skill if the agent that invoked it has the `Edit` tool
+available (today: `semantic-reviewer` and `scientific-review`). If it
+doesn't, produce the rewritten version as text in the response and say
+explicitly that you can't apply it directly to the file - never pretend
+you applied a change that only exists in the conversation.
 
-## Regra fundamental: estilo, nunca substância
+## Fundamental rule: style, never substance
 
-- **Nunca mude** o que está sendo alegado, números, dados, limitações
-  divulgadas, ou a seção de divulgação de uso de IA. Isso vale mesmo que
-  a reescrita "ficasse melhor" mudando um desses - não é sua decisão
-  mudar substância.
-- Se ao reescrever você perceber que uma frase parece cientificamente
-  errada, exagerada, ou contradiz outro trecho, **não conserte
-  silenciosamente dentro da reescrita de estilo** - pare, aponte
-  separadamente ao usuário como um achado de conteúdo (isso é escopo do
-  `scientific-boss`/Camada 3, não desta skill), e só prossiga com a
-  parte estilística depois de decidido o que fazer com o conteúdo.
-- Todas as regras de rigor do projeto continuam valendo integralmente
-  (zero travessão, citações verificadas, financiamento, IA).
+- **Never change** what's being claimed, numbers, data, disclosed
+  limitations, or the AI-usage disclosure section. This holds even if
+  the rewrite would "read better" by changing one of those - it's not
+  your call to change substance.
+- If, while rewriting, you notice a sentence that looks scientifically
+  wrong, overstated, or contradicts another passage, **don't silently
+  fix it inside the style rewrite** - stop, flag it separately to the
+  user as a content finding (that's `scientific-boss`'s/Layer 3's scope,
+  not this skill's), and only proceed with the stylistic part once
+  what to do about the content has been decided.
+- All of the project's rigor rules keep applying in full (zero em
+  dashes, verified citations, funding, AI).
 
-## Processo
+## Process
 
-1. **Leia o trecho-alvo com contexto**: o parágrafo anterior e o
-   seguinte também, não só a frase isolada - mudança de estilo precisa
-   manter coesão com a vizinhança.
-2. **Aplique nesta ordem** (cada uma é o princípio já detalhado na skill
-   de origem, não repita aqui, só siga a ordem):
-   a. Estrutura do parágrafo/seção - modelo CARS para Introdução, C-C-C
-      para qualquer parágrafo, sequência de declarações para Resultados
-      (`narrative-architecture`).
-   b. Clareza de frase - Posição de Tópico/Posição de Ênfase, separação
-      sujeito-verbo (`narrative-architecture`).
-   c. Redução de maneirismos de IA - vocabulário-gatilho, conectores
-      formulaicos, burstiness, regra dos três (`human-natural-language`).
-   d. Hedging calibrado e micro-edição de frase, se o texto for em
-      inglês (`narrative-architecture`).
-3. **Mudanças grandes (reescrita de parágrafo inteiro ou mais)**: mostre
-   antes/depois ao usuário e peça confirmação antes de aplicar.
-   **Mudanças pontuais** (uma frase, reordenar uma cláusula, trocar uma
-   palavra-gatilho): pode aplicar direto e reportar depois - não
-   precisa de confirmação prévia para cada micro-ajuste.
-4. **Aplique via `Edit`**.
-5. **Rode as checagens automáticas** de `scientific-review.md` no trecho
-   editado (zero travessões, sem placeholder esquecido) antes de
-   reportar como concluído.
-6. **Resuma o que mudou e por quê**, referenciando qual princípio
-   motivou cada mudança (ex. "movida a informação nova para a posição de
-   ênfase no final da frase" ou "substituído 'delve into' por verbo mais
-   direto") - nunca só "melhorei a frase" sem dizer o que mudou.
+1. **Read the target passage with context**: the paragraph before and
+   after too, not just the isolated sentence - a style change needs to
+   keep cohesion with its surroundings.
+2. **Apply in this order** (each one is the principle already detailed
+   in its source skill, don't repeat it here, just follow the order):
+   a. Paragraph/section structure - the CARS model for the Introduction,
+      C-C-C for any paragraph, the sequence-of-statements structure for
+      Results (`narrative-architecture`).
+   b. Sentence clarity - Topic Position/Stress Position, subject-verb
+      separation (`narrative-architecture`).
+   c. AI-mannerism reduction - trigger vocabulary, formulaic connectors,
+      burstiness, the rule of three (`human-natural-language`).
+   d. Calibrated hedging and sentence-level micro-editing, if the text
+      is in English (`narrative-architecture`).
+3. **Large changes** (rewriting a whole paragraph or more): show a
+   before/after to the user and ask for confirmation before applying.
+   **Targeted changes** (one sentence, reordering a clause, swapping a
+   trigger word): can apply directly and report afterward - no need for
+   prior confirmation on every micro-adjustment.
+4. **Apply via `Edit`**.
+5. **Run the automated checks** from `scientific-review.md` on the
+   edited passage (zero em dashes, no leftover placeholder) before
+   reporting as done.
+6. **Summarize what changed and why**, referencing which principle
+   motivated each change (e.g. "moved the new information to the
+   sentence-final stress position" or "replaced 'delve into' with a more
+   direct verb") - never just "improved the sentence" without saying
+   what changed.
 
-## Limites
+## Limits
 
-- Não decide se uma alegação científica está certa/sustentada pelos
-  dados - isso é `scientific-boss` (Camada 3).
-- Não reclassifica tipo/estrutura do artigo - isso é `research-design`.
-- É reescrita de texto **já existente** - nunca inventa conteúdo novo,
-  nunca adiciona resultado/dado/citação que não estava no trecho
-  original (uma citação nova só entra se o usuário pedir explicitamente
-  e ela for verificada, nunca por iniciativa própria da reescrita de
-  estilo).
-- Fora do pipeline completo, pode ser usada como atalho rápido - o
-  usuário aponta um trecho, você aplica isto direto, sem precisar
-  acionar `research-design`/`scientific-boss` para uma correção
-  pontual de estilo.
+- Doesn't decide whether a scientific claim is correct/supported by the
+  data - that's `scientific-boss` (Layer 3).
+- Doesn't reclassify the article's type/structure - that's
+  `research-design`.
+- This is rewriting **already-existing** text - never invents new
+  content, never adds a result/data point/citation that wasn't in the
+  original passage (a new citation only goes in if the user explicitly
+  asks for it and it gets verified, never on the style rewrite's own
+  initiative).
+- Outside the full pipeline, it can be used as a quick shortcut - the
+  user points at a passage, you apply this directly, no need to trigger
+  `research-design`/`scientific-boss` for a one-off style fix.
