@@ -34,10 +34,9 @@ diagnóstico.
    - **Se não houver financiamento**, registre isso também - não force
      uma resposta.
 3. **Localização do manuscrito**: caminho do arquivo ou pasta do projeto
-   (ex. `~/Documentos/Hacat_GEM/artigo/manuscrito/`). Confirme que existe
+   (ex. `~/Documentos/meu_projeto/manuscrito/`). Confirme que existe
    com `Glob`/`Read` antes de repassar adiante - não invente um caminho.
-4. **Periódico-alvo**, se o usuário já souber (ex. Mycoses, Biotechnology
-   Journal, Immunity Inflammation and Disease). Se ainda não decidido,
+4. **Periódico-alvo**, se o usuário já souber (ex. o nome do periódico, se já escolhido). Se ainda não decidido,
    registre como "não definido" - não é bloqueante para seguir.
 5. **Tipo de pedido**: o usuário quer uma **revisão pontual** rápida
    (ex. só a Discussão, só checar citações) ou uma **revisão completa

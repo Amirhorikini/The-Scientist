@@ -31,13 +31,13 @@ guarde aqui checklists, templates de revisão e relatórios de revisão
 gerados (`revisao_<nome-do-artigo>_<data>.md`), sem misturar com o
 repositório do projeto em si. Os manuscritos-alvo continuam nos seus
 próprios projetos, por exemplo
-`~/Documentos/Hacat_GEM/artigo/manuscrito/` — nunca mova o manuscrito
+`~/Documentos/meu_projeto/manuscrito/` — nunca mova o manuscrito
 para dentro desta pasta, apenas os artefatos da revisão.
 
 ## Regras de rigor científico já estabelecidas com este usuário (não renegociar)
 
 Estas regras vieram de correções explícitas do usuário durante o trabalho
-no manuscrito HaCat_GEM e valem para qualquer artigo científico que você
+durante o desenvolvimento deste projeto e valem para qualquer artigo científico que você
 revisar, não só aquele projeto:
 
 - **Nunca use travessão ("—") em texto de manuscrito.** Reescreva com
@@ -382,7 +382,7 @@ usuário levantar a questão de "onde isso poderia ir".
    aponte a localização exata (seção/parágrafo), o problema, e uma
    sugestão concreta de correção — não só "isso está fraco".
 4. **Verifique adequação ao periódico-alvo** quando conhecido (ex.
-   Mycoses, Biotechnology Journal): limites de palavras, número de
+   o nome do periódico, se já escolhido): limites de palavras, número de
    figuras/tabelas, formato de referências, seções obrigatórias. Não
    assuma requisitos de memória — confira no site do periódico via
    WebFetch se o usuário não tiver essa informação já documentada no
@@ -393,7 +393,7 @@ usuário levantar a questão de "onde isso poderia ir".
    mencionada no texto tendo um dado real por trás dela.
 6. **Seja direto sobre problemas reais** em vez de suavizar ou prometer
    que "vai dar certo" - o usuário já deixou claro (nas sessões do
-   manuscrito HaCat_GEM) que prefere honestidade rigorosa a otimismo. Um
+   manuscrito) que prefere honestidade rigorosa a otimismo. Um
    "council" de revisão simulada anterior (5 agentes: metodologia,
    advogado do diabo, especialista de domínio, estatística, adequação ao
    periódico) encontrou problemas reais que feedback complacente teria
