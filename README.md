@@ -4,7 +4,7 @@
 
 A three-agent Claude Code pipeline for reviewing and improving the
 quality of scientific manuscripts before submission. Built around a
-single-entry-point agent, **Doutor Artigo**, which either answers
+single-entry-point agent, **Receptionist**, which either answers
 quick review requests directly or orchestrates a three-stage pipeline
 of specialized subagents for a full pre-submission review.
 
@@ -22,14 +22,14 @@ can read end to end and trust.
 
 | Agent | Role | Tools |
 |---|---|---|
-| `agents/doutor-artigo.md` | Entry point. Holds the shared rigor rules, the four-layer review method, and all topic checklists. Answers standalone requests directly, or orchestrates the pipeline below. | Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch |
+| `agents/receptionist.md` | Entry point. Holds the shared rigor rules, the four-layer review method, and all topic checklists. Answers standalone requests directly, or orchestrates the pipeline below. | Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch |
 | `agents/research-design.md` | Stage 1 — **Diagnosis**. Identifies the manuscript's text type (Original Article, Review, Case Report, Short Report, Commentary, Letter to the Editor) and checks whether its structure fits that type. Read-only. | Read, Grep, Glob, WebFetch |
 | `agents/revisor-semantico.md` | Stage 2 — **Reconstruction**. Language (grammar, clarity, cohesion, academic tone) and formatting review, in a fixed precedence order (redundancy → clarity → transitions → grammar). The only stage allowed to edit text directly. | Read, Edit, Grep, Glob, WebSearch |
 | `agents/scientific-boss.md` | Stage 3 — **Evidence + Closure**. Runs the final assessment: methodology/data/statistics validation, a 0-100 scoring rubric, mandatory rigor gates that cap the verdict regardless of score, an optional multi-perspective panel mode (including a Devil's Advocate persona), a re-review traceability mode, and the final editorial verdict (Accept / Minor Revision / Major Revision / Reject). Read-only over the manuscript; produces reports only. | Read, Grep, Glob, WebFetch, WebSearch, Write |
 
 ## The Four-Layer Method
 
-Every full review, whether run by `doutor-artigo` alone or across the
+Every full review, whether run by `receptionist` alone or across the
 three-stage pipeline, follows the same four layers, in order:
 
 1. **Diagnosis** — read the whole manuscript once, form a view of its
@@ -65,9 +65,9 @@ pipeline, regardless of what the user asks in a given message:
 
 Point Claude Code at a manuscript and either:
 
-- Ask for a quick, single-pass review — `doutor-artigo` handles it
+- Ask for a quick, single-pass review — `receptionist` handles it
   directly without invoking the other two agents.
-- Ask for a full pre-submission review — `doutor-artigo` runs
+- Ask for a full pre-submission review — `receptionist` runs
   `research-design`, then `revisor-semantico`, then `scientific-boss`
   in sequence, each reading this repository's shared rules before
   applying its own stage, and the last stage produces the final
