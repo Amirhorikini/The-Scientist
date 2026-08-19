@@ -33,7 +33,11 @@ can read end to end and trust.
 
 | Skill | Role |
 |---|---|
-| `skills/human-natural-language/SKILL.md` | Qualitative checklist for reducing AI-writing mannerisms in academic prose (English and Portuguese) - sentence-length variation, trigger vocabulary, formulaic connectors, the rule-of-three pattern, Portuguese calque risk. A style guide, not a reliable AI detector. Invoked by `revisor-semantico` during Layer 2. |
+| `skills/human-natural-language/SKILL.md` | Qualitative checklist for reducing AI-writing mannerisms in academic prose (English and Portuguese) - sentence-length variation, trigger vocabulary, formulaic connectors, the rule-of-three pattern, Portuguese calque risk. A style guide, not a reliable AI detector. |
+| `skills/narrative-architecture/SKILL.md` | Narrative structure and sentence-level clarity: the Context-Content-Conclusion framework at every level, Swales' CARS model for Introductions, the Results "sequence of statements" structure, Gopen & Swan's topic-position/stress-position principles, lexical cohesion (Halliday & Hasan) as an alternative to mechanical connectors, and academic-English micro-editing (adverb placement, nominalization, calibrated hedging). |
+| `skills/manuscript-rewriter/SKILL.md` | The only skill that actually rewrites and applies edits to the manuscript file (via `Edit`), orchestrating `narrative-architecture` and `human-natural-language` together. Style-only - never changes claims, data, limitations, or AI disclosure. |
+| `skills/statistical-reporting-standards/SKILL.md` | Detailed APA 7th-edition statistical reporting checklist: universal checklist, method-specific checklists (t-test, ANOVA, regression, SEM, HLM, chi-square, non-parametric), APA number/symbol formatting, p-hacking/HARKing red flags, and the GRIM/GRIMMER numerical-consistency checks. |
+| `skills/revision-response-composer/SKILL.md` | Composes the formal Reviewer→Author-Response→Changes-Made (R→A→C) letter after a real or simulated peer-review round, including the correct way to disagree with a reviewer using evidence. |
 | `skills/publication-strategist/SKILL.md` | Fast strategic pre-submission lens (not a full layered review): desk-reject risk, IMRaD flow, stylometry, and a deep research-design diagnostic kit (purpose-statement completeness, null/alternative hypotheses, internal/external validity threats, survey-design checklist, qualitative validity strategies, and a claim/reason/evidence/warrant/acknowledgment-response argument-quality check). Produces a 0-100% readiness score, top 3 desk-reject risks, section-by-section critique, and a prioritized action plan. |
 
 ## The Four-Layer Method
@@ -88,6 +92,17 @@ hands off to `scientific-review`, which either:
 
 Review reports are written to the user's own working folder, kept
 separate from the manuscript's own repository.
+
+When the full pipeline runs, `scientific-review` also asks up front
+which output format the user wants for the final **Diagnostic Report**
+(chat, HTML artifact with real charts, or PDF - checked against locally
+available tooling before being offered) and consolidates: an executive
+summary of strengths/weaknesses, per-checklist pass/fail results, each
+pipeline stage's conclusion reproduced in full and separately (not
+merged into one voice), a scoring-rubric chart and a findings-by-severity
+chart, a verified (never cached) target-journal/impact-factor suggestion,
+and a 3-tier action plan (Urgent / Intermediate / Light) mapped to
+finding severity.
 
 ## References
 

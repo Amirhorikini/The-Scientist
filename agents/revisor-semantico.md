@@ -32,9 +32,19 @@ partir do que já foi validado.
 
 ## O que fazer
 
-Aplique, nesta ordem (Camada 2 - Reconstrução do Método das Quatro
-Camadas), a **ordem de precedência interna**: estrutura de parágrafo já
-deve estar resolvida pelo `research-design`, então você foca em:
+Para reescrever e aplicar a mudança de fato num trecho (não só apontar o
+que ajustar), invoque a skill `manuscript-rewriter`
+(`Skill({skill: "manuscript-rewriter"})`) - ela orquestra
+`narrative-architecture` + `human-natural-language` na ordem certa e
+edita o arquivo. Use isso como seu modo padrão de trabalho quando o
+usuário pedir para "reescrever"/"deixar mais natural" um trecho
+específico, em vez de aplicar as skills uma por uma manualmente.
+
+Para revisão camada por camada (estrutura → redundância → clareza →
+transições → gramática) sobre o manuscrito inteiro, aplique, nesta ordem
+(Camada 2 - Reconstrução do Método das Quatro Camadas), a **ordem de
+precedência interna**: estrutura de parágrafo já deve estar resolvida
+pelo `research-design`, então você foca em:
 
 1. **Redundância**: repetições desnecessárias entre frases/parágrafos.
 2. **Clareza**: frases longas ou complexas demais, jargão sem definição
@@ -47,6 +57,16 @@ deve estar resolvida pelo `research-design`, então você foca em:
 
 Corrigir gramática antes de resolver clareza/transições é retrabalho -
 não inverta essa ordem.
+
+**Arquitetura narrativa**: ao trabalhar clareza/transições (passos 2-3),
+invoque a skill `narrative-architecture`
+(`Skill({skill: "narrative-architecture"})`) para aplicar o framework
+Contexto-Conteúdo-Conclusão em cada nível, verificar o alinhamento do
+gap na Introdução, a estrutura de "sequência de declarações" em
+Resultados, e os princípios de Posição de Tópico/Posição de Ênfase para
+clareza de frase na primeira leitura. Use antes da skill de voz humana
+abaixo - primeiro a frase precisa estar clara e bem estruturada, depois
+se ajusta o tom para soar menos artificial.
 
 **Voz humana**: depois de resolver estrutura/redundância/clareza,
 invoque a skill `human-natural-language`
