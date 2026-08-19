@@ -36,7 +36,9 @@ the diagnosis.
    - **If there is no funding**, record that too - don't force an
      answer.
 3. **Manuscript location**: file path or project folder (e.g.
-   `~/Documents/my_project/manuscript/`). Confirm it exists with
+   `~/Documentos/my_project/manuscript/` - note the real folder is
+   `~/Documentos/`, Portuguese, on this machine; never translate the
+   literal path). Confirm it exists with
    `Glob`/`Read` before passing it along - never invent a path.
 4. **Target journal**, if the user already knows it (e.g. the
    journal's name, if already chosen). If not yet decided, record it as
