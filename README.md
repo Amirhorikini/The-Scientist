@@ -26,7 +26,7 @@ can read end to end and trust.
 | `agents/receptionist.md` | Intake. Collects working language, authors' country and funding source, manuscript location, target journal, and request type (quick review vs. full pipeline). Does not read or evaluate the manuscript's content — hands off a short intake summary to `scientific-review`. | Read, Grep, Glob, Write |
 | `agents/scientific-review.md` | Entry point for actual evaluation. Holds the shared rigor rules, the four-layer review method, and all topic checklists. Answers standalone requests directly, or orchestrates the three-stage pipeline below. | Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch |
 | `agents/research-design.md` | Stage 1 — **Diagnosis**. Identifies the manuscript's text type (Original Article, Review, Case Report, Short Report, Commentary, Letter to the Editor) and checks whether its structure fits that type. Read-only. | Read, Grep, Glob, WebFetch |
-| `agents/revisor-semantico.md` | Stage 2 — **Reconstruction**. Language (grammar, clarity, cohesion, academic tone) and formatting review, in a fixed precedence order (redundancy → clarity → transitions → grammar). The only stage allowed to edit text directly. | Read, Edit, Grep, Glob, WebSearch |
+| `agents/semantic-reviewer.md` | Stage 2 — **Reconstruction**. Language (grammar, clarity, cohesion, academic tone) and formatting review, in a fixed precedence order (redundancy → clarity → transitions → grammar). The only stage allowed to edit text directly. | Read, Edit, Grep, Glob, WebSearch |
 | `agents/scientific-boss.md` | Stage 3 — **Evidence + Closure**. Runs the final assessment: methodology/data/statistics validation, a 0-100 scoring rubric, mandatory rigor gates that cap the verdict regardless of score, an optional multi-perspective panel mode (including a Devil's Advocate persona), a re-review traceability mode, and the final editorial verdict (Accept / Minor Revision / Major Revision / Reject). Read-only over the manuscript; produces reports only. | Read, Grep, Glob, WebFetch, WebSearch, Write |
 
 ## Skills
@@ -39,6 +39,7 @@ can read end to end and trust.
 | `skills/statistical-reporting-standards/SKILL.md` | Detailed APA 7th-edition statistical reporting checklist: universal checklist, method-specific checklists (t-test, ANOVA, regression, SEM, HLM, chi-square, non-parametric), APA number/symbol formatting, p-hacking/HARKing red flags, and the GRIM/GRIMMER numerical-consistency checks. |
 | `skills/revision-response-composer/SKILL.md` | Composes the formal Reviewer→Author-Response→Changes-Made (R→A→C) letter after a real or simulated peer-review round, including the correct way to disagree with a reviewer using evidence. |
 | `skills/publication-strategist/SKILL.md` | Fast strategic pre-submission lens (not a full layered review): desk-reject risk, IMRaD flow, stylometry, and a deep research-design diagnostic kit (purpose-statement completeness, null/alternative hypotheses, internal/external validity threats, survey-design checklist, qualitative validity strategies, and a claim/reason/evidence/warrant/acknowledgment-response argument-quality check). Produces a 0-100% readiness score, top 3 desk-reject risks, section-by-section critique, and a prioritized action plan. |
+| `skills/pipeline-orchestrator/SKILL.md` | A single trigger that runs all four pipeline agents in sequence automatically, then assembles the Final Diagnostic Report - for when the user wants the complete cycle without invoking each agent manually. |
 
 ## The Four-Layer Method
 
@@ -86,7 +87,7 @@ hands off to `scientific-review`, which either:
 
 - Answers a quick, single-pass review directly, or
 - Runs the full pre-submission pipeline: `research-design`, then
-  `revisor-semantico`, then `scientific-boss` in sequence, each
+  `semantic-reviewer`, then `scientific-boss` in sequence, each
   reading this repository's shared rules before applying its own
   stage, with the last stage producing the final decision report.
 

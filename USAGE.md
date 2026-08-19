@@ -1,76 +1,78 @@
 <!-- title: The Scientist Usage Guide -->
 
-# Como usar o The Scientist
+# How to Use The Scientist
 
-Guia rápido - não repete o que já está no `README.md` (arquitetura) ou
-nos arquivos de cada agente/skill (regras detalhadas).
+A quick guide - doesn't repeat what's already in `README.md`
+(architecture) or in each agent/skill's own file (detailed rules).
 
-## O jeito mais simples: automação completa
+## The simplest way: full automation
 
-Se você quer o ciclo inteiro (intake → estrutura → linguagem →
-evidência/veredito → relatório final), diga algo como:
+If you want the whole cycle (intake → structure → language →
+evidence/verdict → final report), say something like:
 
-> "Rode o pipeline completo no manuscrito em `~/Documentos/.../artigo.md`"
-> "Automação completa nesse artigo"
-> "Diagnóstico do zero ao fim"
+> "Run the full pipeline on the manuscript at `~/path/to/article.md`"
+> "Full automation on this article"
+> "Start-to-finish diagnostic"
 
-Isso aciona a skill `pipeline-orchestrator`, que chama os 4 agentes em
-sequência sozinha e no final pergunta em que formato você quer o
-relatório (chat, HTML com gráficos, ou PDF - se houver conversor
-disponível na máquina).
+This triggers the `pipeline-orchestrator` skill, which calls the 4
+agents in sequence on its own and at the end asks which format you want
+the report in (chat, HTML with charts, or PDF - if a converter is
+available on the machine).
 
-## Revisão pontual (sem rodar tudo)
+## Targeted review (without running everything)
 
-Para algo específico, fale direto, sem precisar da automação completa:
+For something specific, just ask directly, no need for the full
+automation:
 
-- **"Revisa a Discussão desse artigo"** / **"Confere as citações"** →
-  conversa com `scientific-review` diretamente.
-- **"Reescreve esse parágrafo, deixa mais natural"** → aciona
-  `manuscript-rewriter` (edita o arquivo de verdade, não só sugere).
-- **"Isso tá pronto pra submeter? Qual o risco de desk-reject?"** →
-  aciona a skill `publication-strategist` (parecer estratégico rápido,
-  não a revisão completa em camadas).
-- **"Escreve a carta de resposta aos revisores"** → aciona
+- **"Review the Discussion of this article"** / **"Check the
+  citations"** → talks to `scientific-review` directly.
+- **"Rewrite this paragraph, make it sound more natural"** → triggers
+  `manuscript-rewriter` (actually edits the file, doesn't just suggest).
+- **"Is this ready to submit? What's the desk-reject risk?"** →
+  triggers the `publication-strategist` skill (a fast strategic
+  assessment, not the full layered review).
+- **"Write the response letter to reviewers"** → triggers
   `revision-response-composer`.
 
-## O que o sistema vai te perguntar primeiro
+## What the system will ask you first
 
-Sempre que você trouxer um manuscrito novo, espere responder (uma vez
-só, não a cada mensagem):
+Whenever you bring a new manuscript, expect to answer (once, not on
+every message):
 
-1. Em que idioma você quer que a conversa aconteça.
-2. País dos autores (e se há financiamento a declarar - CAPES ou
-   equivalente do país).
-3. Onde está o manuscrito, e o periódico-alvo (se já tiver um).
-4. Se é a primeira revisão ou uma re-revisão de algo já avaliado antes.
+1. Which language you want the conversation to happen in.
+2. The authors' country (and whether there's funding to declare -
+   CAPES or the country's equivalent).
+3. Where the manuscript is, and the target journal (if you already have
+   one).
+4. Whether this is the first review or a re-review of something already
+   assessed before.
 
-Isso é o `receptionist` fazendo intake - ele não avalia nada do
-conteúdo, só recolhe essas informações e repassa adiante.
+This is `receptionist` doing intake - it doesn't evaluate any content,
+it just collects this information and passes it along.
 
-## Regras que nunca mudam, seja qual for o pedido
+## Rules that never change, regardless of the request
 
-- Zero travessão em texto de manuscrito.
-- Nenhuma citação entra sem ser verificada de verdade (nunca de
-  memória).
-- Limitações reais nunca são amaciadas ou escondidas, mesmo se você
-  pedir.
-- Divulgação de uso de IA sempre completa, mesmo pedindo algo "mínimo".
-- Financiamento (CAPES ou equivalente) sempre conferido quando aplicável.
+- Zero em dashes in manuscript text.
+- No citation ever goes in without being actually verified (never from
+  memory).
+- Real limitations are never softened or hidden, even if you ask.
+- AI-usage disclosure is always complete, even when asked to keep it
+  "minimal."
+- Funding (CAPES or equivalent) is always checked when applicable.
 
-Se algum pedido esbarrar numa dessas regras, o agente vai recusar essa
-parte específica e explicar por quê - isso é esperado, não é um bug.
+If a request runs into one of these rules, the agent will refuse that
+specific part and explain why - that's expected, not a bug.
 
-## Onde as coisas ficam
+## Where things live
 
-- Relatórios de revisão: `~/Documentos/doctor agente/`.
-- O manuscrito em si: fica no projeto dele, nunca é movido para dentro
-  da pasta acima.
-- Definições dos agentes/skills: `~/.claude/agents/` e
-  `~/.claude/skills/` (espelhados neste repositório).
+- Review reports: `~/Documentos/The Scientist/`.
+- The manuscript itself: stays in its own project, never moved into the
+  folder above.
+- Agent/skill definitions: `~/.claude/agents/` and `~/.claude/skills/`
+  (mirrored in this repository).
 
-## Se algo não estiver disponível
+## If something isn't available
 
-Antes de prometer um formato/ferramenta (ex. exportar PDF, publicar
-HTML), os agentes checam a máquina primeiro - se algo não estiver
-instalado, você recebe um aviso claro em vez de uma promessa que não vai
-se cumprir.
+Before promising a format/tool (e.g. exporting a PDF, publishing HTML),
+the agents check the machine first - if something isn't installed, you
+get a clear warning instead of a promise that won't hold.
